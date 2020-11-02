@@ -1,14 +1,34 @@
 
 <!DOCTYPE html>
 <html>
+ <head>
+  <title>Audio Samples from "Perceptually guided end-to-end text-to-speech"</title>
+  <style>
+      div {
+        margin-bottom: 32px;
+      }
+      table{border-spacing: 10px;}
+  </style>
+ </head>
  <body>
-    <article>
-      <header>
+   <article>
+     <header>
         <h1>Audio Samples from "Perceptually guided end-to-end text-to-speech"</h1>
-      </header>
-    </article>
+    </header>
+  </article>
+  <h3>Authors</h3>
+    <ul>
+      <li> Yeunju Choi (wkadldppdy@kaist.ac.kr) </li>
+      <li> Youngmoon Jung (dudans@kaist.ac.kr) </li>
+      <li> Hoirin Kim (hoirkim@kaist.ac.kr) </li>
+   </ul>   
     <div>
-      <p>제시간에 오셨네요. 지금 진찰받는 환자분 다음에 들어가시면 됩니다.</p>
+      <h3>Abstract</h3>
+      Several fast text-to-speech (TTS) models have been proposed for real-time processing, but there is room for improvement in speech quality. Meanwhile, there is a mismatch between the loss function for training and the mean opinion score (MOS) for evaluation, which may limit the speech quality of TTS models. In this work, we propose a method that can improve the speech quality of a fast TTS model while maintaining the inference speed. To do so, we train a TTS model using a perceptual loss based on the predicted MOS. Under the supervision of a MOS prediction model, a TTS model can learn to increase the perceptual quality of speech directly. In experiments, we train FastSpeech on our internal Korean dataset using the MOS prediction model pre-trained on the Voice Conversion Challenge 2018 evaluation results. The MOS test results show that our proposed approach outperforms FastSpeech in speech quality. 
+   </div>
+    <div>
+      <h3>Audio samples</h3>
+      <p>Sentence 1: 제시간에 오셨네요. 지금 진찰받는 환자분 다음에 들어가시면 됩니다.</p>
       <table>
         <tbody>
           <tr>
@@ -16,16 +36,20 @@
             <th>FastSpeech</th>
             <th>FastSpeech+MOSNet w/ TH</th>
             <th>FastSpeech+MOSNet w/ WS</th>
-            <th>FastSpeech+MTL-MOSNet w/ TH</th>
-            <th>FastSpeech+MTL-MOSNet w/ WS</th>
-            <th>FastSpeech+AUG w/ TH</th>
-            <th>FastSpeech+AUG w/ WS</th>
           </tr>
           <tr>
             <td><audio controls preload="none"><source src="Transformer/sample_0.wav"></audio></td>
             <td><audio controls preload="none"><source src="FastSpeech/sample_0.wav"></audio></td>
             <td><audio controls preload="none"><source src="FS+MOSNet_TH/sample_0.wav"></audio></td>
             <td><audio controls preload="none"><source src="FS+MOSNet_WS/sample_0.wav"></audio></td>
+          </tr>
+          <tr>
+            <th>FastSpeech+MTL-MOSNet w/ TH</th>
+            <th>FastSpeech+MTL-MOSNet w/ WS</th>
+            <th>FastSpeech+AUG w/ TH</th>
+            <th>FastSpeech+AUG w/ WS</th>
+          </tr>
+          <tr>
             <td><audio controls preload="none"><source src="FS+MTL-MOSNet_TH/sample_0.wav"></audio></td>
             <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_0.wav"></audio></td>
             <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_0.wav"></audio></td>
