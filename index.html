@@ -26,7 +26,19 @@
    </ul>   
     <div>
       <h3>Abstract</h3>
-      Several fast text-to-speech (TTS) models have been proposed for real-time processing, but there is room for improvement in speech quality. Meanwhile, there is a mismatch between the loss function for training and the mean opinion score (MOS) for evaluation, which may limit the speech quality of TTS models. In this work, we propose a method that can improve the speech quality of a fast TTS model while maintaining the inference speed. To do so, we train a TTS model using a perceptual loss based on the predicted MOS. Under the supervision of a MOS prediction model, a TTS model can learn to increase the perceptual quality of speech directly. In experiments, we train FastSpeech on our internal Korean dataset using the MOS prediction model pre-trained on the Voice Conversion Challenge 2018 evaluation results. The MOS test results show that our proposed approach outperforms FastSpeech in speech quality. 
+      Several fast text-to-speech (TTS) models have been proposed for real-time processing, but there is room for improvement in speech quality. Meanwhile, there is a mismatch between the loss function for training and the mean opinion score (MOS) for evaluation, 
+      which may limit the speech quality of TTS models. In this work, we propose a method that can improve the speech quality of a fast TTS model while maintaining the inference speed. To do so, we train a TTS model using a perceptual loss based on the predicted MOS. 
+      Under the supervision of a MOS prediction model, a TTS model can learn to increase the perceptual quality of speech directly. In experiments, we train FastSpeech on our internal Korean dataset using the MOS prediction model pre-trained on the Voice Conversion 
+      Challenge 2018 evaluation results. The MOS test results show that our proposed approach outperforms FastSpeech in speech quality. 
+   </div>
+    <div>
+     <h3>Notations</h3>
+      <ul>
+        <li> MTL-MOSNet: MOSNet using multi-task learning </li>
+        <li> TH: thresholding strategy for perceptual loss </li>
+        <li> WS: weighted sum strategy for perceptual loss </li>
+        <li> AUG: MTL-MOSNet trained on the augmented training data </li>
+     </ul>   
    </div>
     <div>
       <h3>Audio samples</h3>
@@ -248,38 +260,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 8: 지하상가 안인데, 너랑 만나기로 한 장소를 가려면 몇 번 출구로 나가?</p>
-      <table>
-        <tbody>
-          <tr>
-            <th>Transformer</th>
-            <th>FastSpeech</th>
-            <th>FastSpeech+MOSNet w/ TH</th>
-            <th>FastSpeech+MOSNet w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="Transformer/sample_7.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FastSpeech/sample_7.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_TH/sample_7.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_WS/sample_7.wav"></audio></td>
-         </tr>
-          <tr>
-            <th>FastSpeech+MTL-MOSNet w/ TH</th>
-            <th>FastSpeech+MTL-MOSNet w/ WS</th>
-            <th>FastSpeech+AUG w/ TH</th>
-            <th>FastSpeech+AUG w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_TH/sample_7.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_7.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_7.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_WS/sample_7.wav"></audio></td>
-         </tr>
-       </tbody>
-     </table>
-     </div>
-      <div>
-      <p>Sentence 9: 며칠 걸린다고 하니까 당분간 빨래방을 이용할 수 밖에요.</p>
+      <p>Sentence 8: 며칠 걸린다고 하니까 당분간 빨래방을 이용할 수 밖에요.</p>
       <table>
         <tbody>
           <tr>
@@ -310,7 +291,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 10: 전화를 잘못하신 것 같네요.</p>
+      <p>Sentence 9: 전화를 잘못하신 것 같네요.</p>
       <table>
         <tbody>
           <tr>
@@ -341,69 +322,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 11: 제가 집주인에게 연락해 볼게요.</p>
-      <table>
-        <tbody>
-          <tr>
-            <th>Transformer</th>
-            <th>FastSpeech</th>
-            <th>FastSpeech+MOSNet w/ TH</th>
-            <th>FastSpeech+MOSNet w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="Transformer/sample_10.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FastSpeech/sample_10.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_TH/sample_10.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_WS/sample_10.wav"></audio></td>
-         </tr>
-          <tr>
-            <th>FastSpeech+MTL-MOSNet w/ TH</th>
-            <th>FastSpeech+MTL-MOSNet w/ WS</th>
-            <th>FastSpeech+AUG w/ TH</th>
-            <th>FastSpeech+AUG w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_TH/sample_10.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_10.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_10.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_WS/sample_10.wav"></audio></td>
-         </tr>
-       </tbody>
-     </table>
-     </div>
-      <div>
-      <p>Sentence 12: 딸이 먹고 싶다고 하도 성화를 부려서요.</p>
-      <table>
-        <tbody>
-          <tr>
-            <th>Transformer</th>
-            <th>FastSpeech</th>
-            <th>FastSpeech+MOSNet w/ TH</th>
-            <th>FastSpeech+MOSNet w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="Transformer/sample_11.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FastSpeech/sample_11.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_TH/sample_11.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_WS/sample_11.wav"></audio></td>
-         </tr>
-          <tr>
-            <th>FastSpeech+MTL-MOSNet w/ TH</th>
-            <th>FastSpeech+MTL-MOSNet w/ WS</th>
-            <th>FastSpeech+AUG w/ TH</th>
-            <th>FastSpeech+AUG w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_TH/sample_11.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_11.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_11.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_WS/sample_11.wav"></audio></td>
-         </tr>
-       </tbody>
-     </table>
-     </div>
-      <div>
-      <p>Sentence 13: 병원은 안정을 취해야 하는 환자들이 계신 곳이잖아요.</p>
+      <p>Sentence 10: 병원은 안정을 취해야 하는 환자들이 계신 곳이잖아요.</p>
       <table>
         <tbody>
           <tr>
@@ -434,69 +353,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 14: 집에서 하던 대로 하다 보니, 불편하게 해 죄송해요.</p>
-      <table>
-        <tbody>
-          <tr>
-            <th>Transformer</th>
-            <th>FastSpeech</th>
-            <th>FastSpeech+MOSNet w/ TH</th>
-            <th>FastSpeech+MOSNet w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="Transformer/sample_13.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FastSpeech/sample_13.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_TH/sample_13.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_WS/sample_13.wav"></audio></td>
-         </tr>
-          <tr>
-            <th>FastSpeech+MTL-MOSNet w/ TH</th>
-            <th>FastSpeech+MTL-MOSNet w/ WS</th>
-            <th>FastSpeech+AUG w/ TH</th>
-            <th>FastSpeech+AUG w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_TH/sample_13.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_13.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_13.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_WS/sample_13.wav"></audio></td>
-         </tr>
-       </tbody>
-     </table>
-     </div>
-      <div>
-      <p>Sentence 15: 만약에 갔다가 자리가 없으면 어떡해요?</p>
-      <table>
-        <tbody>
-          <tr>
-            <th>Transformer</th>
-            <th>FastSpeech</th>
-            <th>FastSpeech+MOSNet w/ TH</th>
-            <th>FastSpeech+MOSNet w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="Transformer/sample_14.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FastSpeech/sample_14.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_TH/sample_14.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_WS/sample_14.wav"></audio></td>
-         </tr>
-          <tr>
-            <th>FastSpeech+MTL-MOSNet w/ TH</th>
-            <th>FastSpeech+MTL-MOSNet w/ WS</th>
-            <th>FastSpeech+AUG w/ TH</th>
-            <th>FastSpeech+AUG w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_TH/sample_14.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_14.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_14.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_WS/sample_14.wav"></audio></td>
-         </tr>
-       </tbody>
-     </table>
-     </div>
-      <div>
-      <p>Sentence 16: 다음에 오시면 신상들 보실 수 있도록 신경쓰겠습니다.</p>
+      <p>Sentence 11: 다음에 오시면 신상들 보실 수 있도록 신경쓰겠습니다.</p>
       <table>
         <tbody>
           <tr>
@@ -527,7 +384,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 17: 같은 방법으로 고객님께서 직접 해보시겠어요?</p>
+      <p>Sentence 12: 같은 방법으로 고객님께서 직접 해보시겠어요?</p>
       <table>
         <tbody>
           <tr>
@@ -558,38 +415,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 18: 잠시만 기다리시면 준비해 드릴게요</p>
-      <table>
-        <tbody>
-          <tr>
-            <th>Transformer</th>
-            <th>FastSpeech</th>
-            <th>FastSpeech+MOSNet w/ TH</th>
-            <th>FastSpeech+MOSNet w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="Transformer/sample_17.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FastSpeech/sample_17.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_TH/sample_17.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_WS/sample_17.wav"></audio></td>
-         </tr>
-          <tr>
-            <th>FastSpeech+MTL-MOSNet w/ TH</th>
-            <th>FastSpeech+MTL-MOSNet w/ WS</th>
-            <th>FastSpeech+AUG w/ TH</th>
-            <th>FastSpeech+AUG w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_TH/sample_17.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_17.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_17.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_WS/sample_17.wav"></audio></td>
-         </tr>
-       </tbody>
-     </table>
-     </div>
-      <div>
-      <p>Sentence 19: 제 생일이 아니라 같이 가는 친구 생일인데 상관없죠?</p>
+      <p>Sentence 13: 제 생일이 아니라 같이 가는 친구 생일인데 상관없죠?</p>
       <table>
         <tbody>
           <tr>
@@ -620,7 +446,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 20: 버스정류장과 주변 지역은 법으로 정한 금연구역입니다.</p>
+      <p>Sentence 14: 버스정류장과 주변 지역은 법으로 정한 금연구역입니다.</p>
       <table>
         <tbody>
           <tr>
@@ -651,7 +477,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 21: 다들 그렇게 알고 계시지만 제가 들은 건 좀 달라요.</p>
+      <p>Sentence 15: 다들 그렇게 알고 계시지만 제가 들은 건 좀 달라요.</p>
       <table>
         <tbody>
           <tr>
@@ -682,38 +508,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 22: 그런 파티에 가본 적이 없어서요, 제가 가도 될까요?</p>
-      <table>
-        <tbody>
-          <tr>
-            <th>Transformer</th>
-            <th>FastSpeech</th>
-            <th>FastSpeech+MOSNet w/ TH</th>
-            <th>FastSpeech+MOSNet w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="Transformer/sample_21.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FastSpeech/sample_21.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_TH/sample_21.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_WS/sample_21.wav"></audio></td>
-         </tr>
-          <tr>
-            <th>FastSpeech+MTL-MOSNet w/ TH</th>
-            <th>FastSpeech+MTL-MOSNet w/ WS</th>
-            <th>FastSpeech+AUG w/ TH</th>
-            <th>FastSpeech+AUG w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_TH/sample_21.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_21.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_21.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_WS/sample_21.wav"></audio></td>
-         </tr>
-       </tbody>
-     </table>
-     </div>
-      <div>
-      <p>Sentence 23: 아시는 분이 소개해 주셨는데 저희도 만족하고 있어요.</p>
+      <p>Sentence 16: 아시는 분이 소개해 주셨는데 저희도 만족하고 있어요.</p>
       <table>
         <tbody>
           <tr>
@@ -744,69 +539,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 24: 지금도 그때 먹었던 선생님의 도시락 맛이 생각나요.</p>
-      <table>
-        <tbody>
-          <tr>
-            <th>Transformer</th>
-            <th>FastSpeech</th>
-            <th>FastSpeech+MOSNet w/ TH</th>
-            <th>FastSpeech+MOSNet w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="Transformer/sample_23.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FastSpeech/sample_23.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_TH/sample_23.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_WS/sample_23.wav"></audio></td>
-         </tr>
-          <tr>
-            <th>FastSpeech+MTL-MOSNet w/ TH</th>
-            <th>FastSpeech+MTL-MOSNet w/ WS</th>
-            <th>FastSpeech+AUG w/ TH</th>
-            <th>FastSpeech+AUG w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_TH/sample_23.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_23.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_23.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_WS/sample_23.wav"></audio></td>
-         </tr>
-       </tbody>
-     </table>
-     </div>
-      <div>
-      <p>Sentence 25: 앞으로 더 좋은 거 많이 사드릴게요, 건강만 하세요</p>
-      <table>
-        <tbody>
-          <tr>
-            <th>Transformer</th>
-            <th>FastSpeech</th>
-            <th>FastSpeech+MOSNet w/ TH</th>
-            <th>FastSpeech+MOSNet w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="Transformer/sample_24.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FastSpeech/sample_24.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_TH/sample_24.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_WS/sample_24.wav"></audio></td>
-         </tr>
-          <tr>
-            <th>FastSpeech+MTL-MOSNet w/ TH</th>
-            <th>FastSpeech+MTL-MOSNet w/ WS</th>
-            <th>FastSpeech+AUG w/ TH</th>
-            <th>FastSpeech+AUG w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_TH/sample_24.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_24.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_24.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_WS/sample_24.wav"></audio></td>
-         </tr>
-       </tbody>
-     </table>
-     </div>
-      <div>
-      <p>Sentence 26: 저기 계신 손님이 먼저 달라고 하셨거든요.</p>
+      <p>Sentence 17: 저기 계신 손님이 먼저 달라고 하셨거든요.</p>
       <table>
         <tbody>
           <tr>
@@ -837,7 +570,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 27: 주차장에 자리가 없어서 그러는데, 잠깐만 안될까요?</p>
+      <p>Sentence 18: 주차장에 자리가 없어서 그러는데, 잠깐만 안될까요?</p>
       <table>
         <tbody>
           <tr>
@@ -868,7 +601,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 28: 지하철로 국회의사당에 가는 방법을 알려주세요.</p>
+      <p>Sentence 19: 지하철로 국회의사당에 가는 방법을 알려주세요.</p>
       <table>
         <tbody>
           <tr>
@@ -899,7 +632,7 @@
      </table>
      </div>
       <div>
-      <p>Sentence 29: 사거리 정류장에서 타시면 얼마 안 걸려요.</p>
+      <p>Sentence 20: 사거리 정류장에서 타시면 얼마 안 걸려요.</p>
       <table>
         <tbody>
           <tr>
@@ -925,37 +658,6 @@
             <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_28.wav"></audio></td>
             <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_28.wav"></audio></td>
             <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_WS/sample_28.wav"></audio></td>
-         </tr>
-       </tbody>
-     </table>
-     </div>
-      <div>
-      <p>Sentence 30: 십번 출구로 가시면 버스가 대기하고 있을 겁니다.</p>
-      <table>
-        <tbody>
-          <tr>
-            <th>Transformer</th>
-            <th>FastSpeech</th>
-            <th>FastSpeech+MOSNet w/ TH</th>
-            <th>FastSpeech+MOSNet w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="Transformer/sample_29.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FastSpeech/sample_29.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_TH/sample_29.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MOSNet_WS/sample_29.wav"></audio></td>
-         </tr>
-          <tr>
-            <th>FastSpeech+MTL-MOSNet w/ TH</th>
-            <th>FastSpeech+MTL-MOSNet w/ WS</th>
-            <th>FastSpeech+AUG w/ TH</th>
-            <th>FastSpeech+AUG w/ WS</th>
-         </tr>
-          <tr>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_TH/sample_29.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet_WS/sample_29.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_TH/sample_29.wav"></audio></td>
-            <td><audio controls preload="none"><source src="FS+MTL-MOSNet-AUG_WS/sample_29.wav"></audio></td>
          </tr>
        </tbody>
      </table>
