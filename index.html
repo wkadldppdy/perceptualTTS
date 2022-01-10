@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <title>Audio Samples from "Perceptually guided end-to-end text-to-speech with MOS prediction"</title>
+  <title>Audio Samples from "Learning to Maximize Speech Quality Directly Using MOS Prediction for Neural Text-to-Speech"</title>
   <style>
       div {
         margin-bottom: 32px;
@@ -13,7 +13,7 @@
  <body>
    <article>
      <header>
-        <h1>Audio Samples from "Perceptually guided end-to-end text-to-speech with MOS prediction"</h1>
+        <h1>Audio Samples from "Learning to Maximize Speech Quality Directly Using MOS Prediction for Neural Text-to-Speech"</h1>
     </header>
   </article>
   <p>ArXiv: <a href="https://arxiv.org/abs/2011.01174">arXiv:2011.01174</a></p>
@@ -26,15 +26,15 @@
    </ul>   
     <div>
       <h3>Abstract</h3>
-      Although recent text-to-speech (TTS) models have achieved high-quality synthesized speech, there are still several factors that degrade the quality of synthesized speech, including lack of training data or information loss during knowledge distillation.
-      To address the problem, we propose a novel way to train a TTS model under the supervision of a perceptual loss, which measures the distance between the maximum speech quality score and the predicted one.
-      We first pre-train a mean opinion score (MOS) prediction model and then train a TTS model in the direction of maximizing the MOS of synthesized speech predicted by the pre-trained MOS prediction model.
-      Through this training method, we can improve the quality of synthesized speech universally (i.e., regardless of the network architecture or the cause of the speech quality degradation) and efficiently (i.e., without increasing the inference time or the complexity of the model).
-      The evaluation results for MOS and phoneme error rate demonstrate that our proposed approach improves baseline models in terms of both naturalness and intelligibility.
+      Although recent neural text-to-speech (TTS) systems have achieved high-quality speech synthesis, there are cases where a TTS system generates low-quality speech, mainly caused by limited training data or information loss during knowledge distillation. 
+      Therefore, to improve speech quality, we propose a novel way to train a TTS model under the supervision of perceptual loss, which measures the distance between the maximum possible speech quality score and the predicted one. 
+      We first pre-train a mean opinion score (MOS) prediction model and then train a TTS model to maximize the MOS of synthesized speech using the pre-trained MOS prediction model. 
+      The proposed method can be applied universally (i.e., regardless of the TTS model architecture or the cause of speech quality degradation) and efficiently (i.e., without increasing the inference time or model complexity). 
+      The evaluation results for the MOS and phone error rate demonstrate that our proposed approach improves previous models in terms of both naturalness and intelligibility.
    </div>
     <div>
      <h3>Datasets</h3>
-     We used two subsets of our Korean speech dataset: 6-hour-long male dataset and 18-hour-long female dataset.
+     We used two subsets of our Korean speech dataset: 6-hour-long Small dataset and 18-hour-long Large dataset.
      The datasets were built as a part of work supported by the Ministry of Trade, Industry & Energy (MOTIE, Korea) under Industrial Technology Innovation Program
      (No. 10080667, Development of conversational speech synthesis technology to express emotion and personality of robots through sound source diversification).
      More details about the datasets is available at https://github.com/emotiontts/emotiontts_open_db.
@@ -50,13 +50,13 @@
     <div>
      <h3>Notations</h3>
       <ul>
-        <li> GT (Mel): system where Parallel WaveGAN converts ground-truth Mel-spectrogram into a waveform </li> 
-        <li> Transformer-f: Transformer trained on the female dataset </li>
-        <li> P-Transformer-f: perceptually guided Transformer on the female dataset </li>
-        <li> FastSpeech-f: FastSpeech trained on the female dataset </li>
-        <li> P-FastSpeech-f: perceptually guided FastSpeech on the female dataset </li>
-        <li> Transformer-m: Transformer trained on the male dataset </li>
-        <li> P-Transformer-m: perceptually guided Transformer on the male dataset </li>
+        <li> GT (Mel): system where Parallel WaveGAN converts the ground-truth Mel-spectrogram into a waveform </li> 
+        <li> Transformer-L: Transformer trained on the Large dataset </li>
+        <li> P-Transformer-L: perceptually guided Transformer on the Large dataset </li>
+        <li> FastSpeech-L: FastSpeech trained on the Large dataset </li>
+        <li> P-FastSpeech-L: perceptually guided FastSpeech on the Large dataset </li>
+        <li> Transformer-S: Transformer trained on the Small dataset </li>
+        <li> P-Transformer-S: perceptually guided Transformer on the Small dataset </li>
      </ul>   
    </div>
     <div>
@@ -67,9 +67,9 @@
         <tbody>
           <tr>
             <th>GT (Mel)</th>
-            <th>Transformer-f</th>
-            <th>P-Transformer-f</th>
-            <th>FastSpeech-f</th>
+            <th>Transformer-L</th>
+            <th>P-Transformer-L</th>
+            <th>FastSpeech-L</th>
          </tr>
           <tr>
             <td><audio controls preload="none"><source src="GT/sample_0.wav"></audio></td>
@@ -78,9 +78,9 @@
             <td><audio controls preload="none"><source src="FastSpeech-f/sample_0.wav"></audio></td>
          </tr>
           <tr>
-            <th>P-FastSpeech-f</th>
-            <th>Transformer-m</th>
-            <th>P-Transformer-m</th>
+            <th>P-FastSpeech-L</th>
+            <th>Transformer-S</th>
+            <th>P-Transformer-S</th>
          </tr>
           <tr>
             <td><audio controls preload="none"><source src="P-FastSpeech-f/sample_0.wav"></audio></td>
@@ -96,9 +96,9 @@
         <tbody>
           <tr>
             <th>GT (Mel)</th>
-            <th>Transformer-f</th>
-            <th>P-Transformer-f</th>
-            <th>FastSpeech-f</th>
+            <th>Transformer-L</th>
+            <th>P-Transformer-L</th>
+            <th>FastSpeech-L</th>
          </tr>
           <tr>
             <td><audio controls preload="none"><source src="GT/sample_1.wav"></audio></td>
@@ -107,9 +107,9 @@
             <td><audio controls preload="none"><source src="FastSpeech-f/sample_1.wav"></audio></td>
          </tr>
           <tr>
-            <th>P-FastSpeech-f</th>
-            <th>Transformer-m</th>
-            <th>P-Transformer-m</th>
+            <th>P-FastSpeech-L</th>
+            <th>Transformer-S</th>
+            <th>P-Transformer-S</th>
          </tr>
           <tr>
             <td><audio controls preload="none"><source src="P-FastSpeech-f/sample_1.wav"></audio></td>
@@ -125,9 +125,9 @@
         <tbody>
           <tr>
             <th>GT (Mel)</th>
-            <th>Transformer-f</th>
-            <th>P-Transformer-f</th>
-            <th>FastSpeech-f</th>
+            <th>Transformer-L</th>
+            <th>P-Transformer-L</th>
+            <th>FastSpeech-L</th>
          </tr>
           <tr>
             <td><audio controls preload="none"><source src="GT/sample_2.wav"></audio></td>
@@ -136,9 +136,9 @@
             <td><audio controls preload="none"><source src="FastSpeech-f/sample_2.wav"></audio></td>
          </tr>
           <tr>
-            <th>P-FastSpeech-f</th>
-            <th>Transformer-m</th>
-            <th>P-Transformer-m</th>
+            <th>P-FastSpeech-L</th>
+            <th>Transformer-S</th>
+            <th>P-Transformer-S</th>
          </tr>
           <tr>
             <td><audio controls preload="none"><source src="P-FastSpeech-f/sample_2.wav"></audio></td>
@@ -154,9 +154,9 @@
         <tbody>
           <tr>
             <th>GT (Mel)</th>
-            <th>Transformer-f</th>
-            <th>P-Transformer-f</th>
-            <th>FastSpeech-f</th>
+            <th>Transformer-L</th>
+            <th>P-Transformer-L</th>
+            <th>FastSpeech-L</th>
          </tr>
           <tr>
             <td><audio controls preload="none"><source src="GT/sample_3.wav"></audio></td>
@@ -165,9 +165,9 @@
             <td><audio controls preload="none"><source src="FastSpeech-f/sample_3.wav"></audio></td>
          </tr>
           <tr>
-            <th>P-FastSpeech-f</th>
-            <th>Transformer-m</th>
-            <th>P-Transformer-m</th>
+            <th>P-FastSpeech-L</th>
+            <th>Transformer-S</th>
+            <th>P-Transformer-S</th>
          </tr>
           <tr>
             <td><audio controls preload="none"><source src="P-FastSpeech-f/sample_3.wav"></audio></td>
@@ -183,9 +183,9 @@
         <tbody>
           <tr>
             <th>GT (Mel)</th>
-            <th>Transformer-f</th>
-            <th>P-Transformer-f</th>
-            <th>FastSpeech-f</th>
+            <th>Transformer-L</th>
+            <th>P-Transformer-L</th>
+            <th>FastSpeech-L</th>
          </tr>
           <tr>
             <td><audio controls preload="none"><source src="GT/sample_4.wav"></audio></td>
@@ -194,9 +194,9 @@
             <td><audio controls preload="none"><source src="FastSpeech-f/sample_4.wav"></audio></td>
          </tr>
           <tr>
-            <th>P-FastSpeech-f</th>
-            <th>Transformer-m</th>
-            <th>P-Transformer-m</th>
+            <th>P-FastSpeech-L</th>
+            <th>Transformer-S</th>
+            <th>P-Transformer-S</th>
          </tr>
           <tr>
             <td><audio controls preload="none"><source src="P-FastSpeech-f/sample_4.wav"></audio></td>
