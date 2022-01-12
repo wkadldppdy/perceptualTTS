@@ -27,7 +27,7 @@
     <div>
       <h3>Abstract</h3>
       Although recent neural text-to-speech (TTS) systems have achieved high-quality speech synthesis, there are cases where a TTS system generates low-quality speech, mainly caused by limited training data or information loss during knowledge distillation. 
-      Therefore, to improve speech quality, we propose a novel way to train a TTS model under the supervision of perceptual loss, which measures the distance between the maximum possible speech quality score and the predicted one. 
+      Therefore, we propose a novel method to improve speech quality by training a TTS model under the supervision of perceptual loss, which measures the distance between the maximum possible speech quality score and the predicted one. 
       We first pre-train a mean opinion score (MOS) prediction model and then train a TTS model to maximize the MOS of synthesized speech using the pre-trained MOS prediction model. 
       The proposed method can be applied universally (i.e., regardless of the TTS model architecture or the cause of speech quality degradation) and efficiently (i.e., without increasing the inference time or model complexity). 
       The evaluation results for the MOS and phone error rate demonstrate that our proposed approach improves previous models in terms of both naturalness and intelligibility.
